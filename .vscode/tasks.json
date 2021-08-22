@@ -1,0 +1,28 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build & upload",
+      "type": "shell",
+      "command": "platformio run -t upload",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "build & upload & monitor",
+      "type": "shell",
+      "command": "platformio run -t upload -t monitor",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "monitor",
+      "type": "shell",
+      "command": "miniterm.py /dev/ttyUSB0 115200 --raw",
+      "problemMatcher": [],
+      "group": "build"
+    }
+  ]
+}
